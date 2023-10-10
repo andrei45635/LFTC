@@ -15,23 +15,24 @@ BNF:
 <program> ::= <headers_block> <main_block>
 <headers_block> ::= <headers_list> using namespace std ;
 <headers_list> ::= <header> | <header> <headers_list>
-<header> ::= "#" include <library>
-<library> ::= "<" iostream ">"
-<main_block> ::= <type> main "( ) {" <instr_list> "}"
-<type> ::= int | void | double
+<header> ::= # include <library>
+<library> ::= "<" iostream ">" | "<" fstream ">"
+<main_block> ::= <type> main ( ) { <instr_list> }
+<type> ::= int | void | double | point
+<point> ::= struct { int ID; int ID; } ID;
 <instr_list> ::= <instr> | <instr> <instr_list>
 <instr> ::=  atribuire | read | write | if_instr | while_instr | for_instr
-<atribuire> ::= <type> ID; | ID "=" <expr>
+<atribuire> ::= <type> ID; | ID = <expr>
 <expr> ::= ID | CONST | operand <expr>
 <operand> ::= ID | CONST operator ID | CONST
-<operator> ::= "+" | "-" | "/" | "*" | ">" | "<"
-CONST ::= "0" | <non_zero_digit> | <non_zero_digit> CONST
-<non_zero_digit> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
-<read> ::= cin ">>" ID;
-<write> ::= cout "<<" ID; | cout "<<" ID "<<" endl;
-<if_instr> ::= if "(" <expr> ") {" <atribuire> "}" | if "(" <expr> ") {" <atribuire> "}" else "{" <atribuire> "}"
-<while_instr> ::= while "(" <expr> ") {" <instr> "}" | while "(" <expr> ") {" <instr_list> "}"
-<for_instr> ::= for "(" <atribuire>; <expr>; <expr> ") {" <instr> "}" | for "(" <atribuire>; <expr>; <expr> ") {" <instr_list> "}" 
+<operator> ::= + | - | / | * | > | <
+CONST ::= 0 | <non_zero_digit> | <non_zero_digit> CONST
+<non_zero_digit> ::= 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+<read> ::= cin >> ID;
+<write> ::= cout << ID;
+<if_instr> ::= if ( <expr> ) { <atribuire> } | if ( <expr> ) { <atribuire> } else { <atribuire> }
+<while_instr> ::= while ( <expr> ) { <instr> } | while ( <expr> ) { <instr_list> }
+<for_instr> ::= for ( <atribuire>; <expr>; <expr> ) { <instr> } | for ( <atribuire>; <expr>; <expr> ) { <instr_list> } 
 ID ::= CONST | CONST ID | <chars> | <chars> ID 
 <chars> ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z"
  
@@ -50,7 +51,7 @@ int main() {
 	double arie;
 	arie = pi * r * r;
 	cout << perimetru;
-	cout << arie << endl;
+	cout << arie;
 }
 
 b) cmmdc
@@ -70,7 +71,7 @@ int main() {
 			m = m - n; 
 		}
 	}
-	cout << n << endl;
+	cout << n;
 }
 
 c) suma a n numere citite de la tastatura
@@ -86,7 +87,7 @@ int main() {
 		cin >> x;
 		suma = suma + x;
 	}
-	cout << suma << endl;
+	cout << suma;
 }
 
 Cerinta 3)
@@ -101,7 +102,8 @@ int main() {
 	perimetru = 2 * 3.14 * r;
 	double arie;
 	arie = pi * r * r;
-	cout << "perimetru: " << perimetru << "aria: " << arie << endl;
+	cout << perimetru;
+	cout << arie;
 }
 
 b) Al doilea program contine doua erori conform MLP, dar care nu sunt erori in limbajul original
