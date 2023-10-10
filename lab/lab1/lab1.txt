@@ -26,7 +26,9 @@ BNF:
 <expr> ::= ID | CONST | operand <expr>
 <operand> ::= ID | CONST operator ID | CONST
 <operator> ::= + | - | / | * | > | <
-CONST ::= 0 | <non_zero_digit> | <non_zero_digit> CONST
+CONST ::= 0 | <non_zero_digit> | <non_zero_digit> CONST | <non_zero_digit> . <non_zero_digit> | <non_zero_digit> . <digit_list>
+<digit_list> ::= <digit> | digit> <digit_list>
+<digit> ::= 0 <non_zero_digit>
 <non_zero_digit> ::= 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 <read> ::= cin >> ID;
 <write> ::= cout << ID;
