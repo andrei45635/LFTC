@@ -15,7 +15,7 @@ BNF:
 <atribuire> ::= <type> ID; | ID = <expr>;
 <expr> ::= ID | CONST | operand <expr>
 <operand> ::= ID | CONST | CONST operator ID | ID operator ID
-<operator> ::= + | - | / | * | > | < | != | <=
+<operator> ::= + | - | / | * | > | < | != | <= | = | >> | <<
 ID ::= CONST | CONST ID | <char> | <chars>
 CONST ::= <integer> | <float>
 <chars> ::= <char> | <char> <chars>
