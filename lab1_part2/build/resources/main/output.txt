@@ -1,0 +1,8 @@
+KEYWORDS:
+[iostream, using, std, cout, double, #include, namespace, cin, main, int]
+OPERATORS:
+[>>, <<, *, <, =, >]
+SEPARATORS:
+[(, ), ;, {, }]
+CONSTANTS:
+[2, 3.14]
