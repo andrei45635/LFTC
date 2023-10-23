@@ -6,11 +6,8 @@ int main() {
 	int r;
 	cin >> r;
 	double arie;
-	perimetru = 2 * 3.14 * r;
+	perimetru = 2 * 3 * r;
 	arie = pi * r * r;
-	if(arie > perimetru){
-	    cout << arie;
-	}
 	cout << perimetru;
 	cout << arie;
 }

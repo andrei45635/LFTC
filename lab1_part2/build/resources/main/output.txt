@@ -1,8 +1,71 @@
 KEYWORDS:
-[iostream, using, std, cout, double, #include, namespace, cin, main, int]
+[using, std, <iostream>, cout, double, #include, namespace, cin, main, int]
 OPERATORS:
-[>>, <<, *, <, =, >]
+[>>, <<, *, =, >]
 SEPARATORS:
 [(, ), ;, {, }]
 CONSTANTS:
-[2, 3.14]
+[2, 3]
+STRING CONSTANTS:
+[ r,  perimetru,  arie]
+TABELA SIMBOLURI PT ID:
+7	|	0	|	perimetru
+7	|	1	|	pi
+24	|	0	|	r
+27	|	0	|	arie
+
+TABELA SIMBOLURI PT CONST:
+2	|	0	|	2
+3	|	0	|	3
+
+FORMA INTERNA A PROGRAMULUI:
+-1	|	-	|	#include
+-1	|	-	|	<iostream>
+-1	|	-	|	using
+-1	|	-	|	namespace
+-1	|	-	|	std
+-1	|	-	|	;
+-1	|	-	|	int
+-1	|	-	|	main
+-1	|	-	|	(
+-1	|	-	|	)
+-1	|	-	|	{
+-1	|	-	|	int
+21	|	7	|	perimetru
+-1	|	-	|	;
+-1	|	-	|	int
+21	|	24	|	r
+-1	|	-	|	;
+-1	|	-	|	cin
+-1	|	-	|	>>
+21	|	24	|	r
+-1	|	-	|	;
+-1	|	-	|	double
+21	|	27	|	arie
+-1	|	-	|	;
+21	|	7	|	perimetru
+-1	|	-	|	=
+1	|	2	|	2
+-1	|	-	|	*
+1	|	3	|	3
+-1	|	-	|	*
+21	|	24	|	r
+-1	|	-	|	;
+21	|	27	|	arie
+-1	|	-	|	=
+21	|	7	|	pi
+-1	|	-	|	*
+21	|	24	|	r
+-1	|	-	|	*
+21	|	24	|	r
+-1	|	-	|	;
+-1	|	-	|	cout
+-1	|	-	|	<<
+21	|	7	|	perimetru
+-1	|	-	|	;
+-1	|	-	|	cout
+-1	|	-	|	<<
+21	|	27	|	arie
+-1	|	-	|	;
+-1	|	-	|	}
+
