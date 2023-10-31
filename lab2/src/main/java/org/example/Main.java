@@ -153,9 +153,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println("Hello world!");
         menu();
-        //readFromFile("C:\\Users\\GIGABYTE\\IdeaProjects\\LFTC\\lab2\\src\\main\\resources\\input.txt");
-        //readFromKeyboard();
     }
 }
