@@ -13,6 +13,11 @@ public class Main {
     private static AF af;
 
     public static void readFromFile(String filename){
+        stareInitiala = "";
+        alfabetIntrare = new HashSet<>();
+        multimeStari = new HashSet<>();
+        tranzitii = new ArrayList<>();
+        stariFinale = new HashSet<>();
         try {
             File file = new File(filename);
             Scanner reader = new Scanner(file);
@@ -36,6 +41,11 @@ public class Main {
     }
 
     public static void readFromKeyboard(){
+        stareInitiala = "";
+        alfabetIntrare = new HashSet<>();
+        multimeStari = new HashSet<>();
+        tranzitii = new ArrayList<>();
+        stariFinale = new HashSet<>();
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter states (separated by spaces): ");
@@ -115,10 +125,6 @@ public class Main {
                 case 3 -> {
                     System.out.print("Enter a sequence to find the longest prefix: ");
                     String sequenceToFindPrefix = scanner.nextLine();
-                    if(!af.verifySequence(sequenceToFindPrefix)){
-                        System.out.println("Invalid sequence.");
-                        break;
-                    }
                     String longestPrefix = af.findLongestPrefix(sequenceToFindPrefix);
                     System.out.println("Longest Prefix: " + longestPrefix);
                 }

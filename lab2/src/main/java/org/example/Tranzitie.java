@@ -15,24 +15,12 @@ public class Tranzitie {
         return stareInitiala;
     }
 
-    public void setStareInitiala(String stareInitiala) {
-        this.stareInitiala = stareInitiala;
-    }
-
     public String getStareFinala() {
         return stareFinala;
     }
 
-    public void setStareFinala(String stareFinala) {
-        this.stareFinala = stareFinala;
-    }
-
     public String getValoare() {
         return valoare;
-    }
-
-    public void setValoare(String valoare) {
-        this.valoare = valoare;
     }
 
     @Override

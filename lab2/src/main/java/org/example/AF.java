@@ -3,7 +3,27 @@ package org.example;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
+
+/*
+* Structura fisierului de intrare input.txt (BNF):
+*
+* <lista_stari>
+* <stare_initiala>
+* <nr_tranzitii>
+* <lista_tranzitii>
+*
+* <lista_stari> ::= <stare> | <lista_stari>
+* <stare> ::= 'q'CONST
+* CONST = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+* <stare_initiala> ::= <stare>
+* <nr_tranzitii> ::= CONST
+* <lista_tranzitii> ::= <tranzitie> | <lista_tranzitii>
+* <tranzitie> ::= <stare> <stare> ID <bit>
+* ID ::= 'digit' | '-'
+* <bit> ::= '0' | '1'
+*
+* */
+
 
 public class AF {
     private Set<String> stari;
@@ -22,8 +42,7 @@ public class AF {
         this.stareInitiala = stareInitiala;
         this.stariFinale = stariFinale;
 
-//        letters = IntStream.range('a', 'z' + 1).mapToObj(String::valueOf).collect(Collectors.toSet());
-         letters = IntStream.rangeClosed('a', 'z')
+        letters = IntStream.rangeClosed('a', 'z')
                 .mapToObj(c -> String.valueOf((char) c))
                 .collect(Collectors.toSet());
         digits = IntStream.range(0, 10).mapToObj(String::valueOf).collect(Collectors.toSet());
@@ -51,24 +70,16 @@ public class AF {
                 if (t.getStareInitiala().equals(stareInitiala)) {
                     if (t.getValoare().equals("digit") && digits.contains(cs)) {
                         nextChar = t.getStareFinala();
-                        //stareGasita = true;
-                        //break;
+                        break;
                     }
 
-                    if (stareInitiala.equals("-") && t.getValoare().equals("-") && cs.equals("-")) {
+                    if (t.getStareInitiala().equals(stareInitiala) && t.getValoare().equals("-") && cs.equals("-")) {
                         nextChar = t.getStareFinala();
-                        //stareGasita = true;
-                        //break;
+                        break;
                     }
 
-                    if(letters.contains(cs)){
+                    if (letters.contains(cs)) {
                         return false;
-                    }
-
-                    if (t.getValoare().equals(cs)) {
-                        nextChar = t.getStareFinala();
-                        //stareGasita = true;
-                        //break;
                     }
                 }
             }
@@ -80,8 +91,10 @@ public class AF {
             if (stariFinale.contains(nextChar)) {
                 stareGasita = true;
                 stareFinala = nextChar;
-                //break;
             }
+
+            stareInitiala = nextChar;
+            stareFinala = nextChar;
         }
 
         if (!stariFinale.contains(stareFinala)) {
@@ -95,21 +108,17 @@ public class AF {
         String currentState = this.stareInitiala;
         String longestPrefix = "";
         StringBuilder currentPrefix = new StringBuilder();
-        boolean foundNonZero = false;
 
         for (int i = 0; i < sequence.length(); i++) {
-            char character = sequence.charAt(i);
+            String character = String.valueOf(sequence.charAt(i));
             String nextCharacter = null;
 
-            if (Character.isDigit(character)) {
-                if (character != '0' || foundNonZero) {
-                    foundNonZero = true;
-                    for (Tranzitie tranzitie : tranzitii) {
-                        if (tranzitie.getStareInitiala().equals(currentState)) {
-                            nextCharacter = tranzitie.getStareFinala();
-                            currentPrefix.append(character);
-                            break;
-                        }
+            if (digits.contains(character)) {
+                for (Tranzitie tranzitie : tranzitii) {
+                    if (tranzitie.getStareInitiala().equals(currentState)) {
+                        nextCharacter = tranzitie.getStareFinala();
+                        currentPrefix.append(character);
+                        break;
                     }
                 }
             }
