@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int perimetru;
+	int r;
+	cin >> r;
+	double arie;
+	perimetru = 2 * 3 * r;
+	arie = pi * r * r;
+	cout << perimetru;
+	cout << arie;
+}
