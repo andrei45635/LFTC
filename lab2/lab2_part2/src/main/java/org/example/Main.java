@@ -117,24 +117,6 @@ public class Main {
             } else {
                 System.out.println("Error on line " + line + " for atom " + e + "!");
             }
-//            if (atom.isID() && !atom.isKeyword()) {
-//                Position pos = identifierTS.addIdentifier(atom.getInput());
-//                System.out.println("POSITION: " + pos.toString() + " ATOM: " + atom.getInput());
-//                FIP f = new FIP(atom, pos.getPair().getKey(), atoms.get("ID").getKey());
-//                fip.add(f);
-//            } else if (atom.isCONST()) {
-//                Position pos = constTS.addIntConstant(Integer.parseInt(atom.getInput()));
-//                constTS.addIntConstant(Integer.parseInt(atom.getInput()));
-//                FIP f = new FIP(atom, pos.getPair().getKey(), atoms.get("CONST").getKey());
-//                fip.add(f);
-//            } else if (atoms.get(atom.getInput()) != null) {
-//                FIP f = new FIP(atom, -1, -1);
-//                fip.add(f);
-//            } else if(atom.getInput().equals(" ")){
-//                System.out.println("space");
-//            } else {
-//                System.out.println("Error on line " + line + " for atom " + e + "!");
-//            }
         }
     }
 
@@ -232,41 +214,4 @@ public class Main {
         printWriter.printf("FORMA INTERNA A PROGRAMULUI:\n" + fipRes + '\n');
         printWriter.close();
     }
-//        ConstAF constAF = new ConstAF("lab2/lab2_part2/src/main/resources/constAF_input.txt");
-//        System.out.println(constAF.getStareInitiala());
-//        System.out.println(constAF.getAlfabet());
-//        System.out.println(constAF.getStari());
-//        System.out.println(constAF.getTranzitii());
-//        System.out.println(constAF.getStariFinale());
-//        System.out.println(constAF.verifySequence("-125"));
-//        System.out.println(constAF.verifySequence("-135"));
-//        System.out.println(constAF.verifySequence("-525"));
-//        System.out.println(constAF.verifySequence("125"));
-//        System.out.println(constAF.verifySequence("125a"));
-//
-//        FloatAF floatAF = new FloatAF("lab2/lab2_part2/src/main/resources/floatAF_input.txt");
-//        System.out.println(floatAF.getStareInitiala());
-//        System.out.println(floatAF.getAlfabet());
-//        System.out.println(floatAF.getStari());
-//        System.out.println(floatAF.getTranzitii());
-//        System.out.println(floatAF.getStariFinale());
-//        System.out.println(floatAF.verifySequence("1.25"));
-//        System.out.println(floatAF.verifySequence("-125"));
-//        System.out.println(floatAF.verifySequence("125"));
-//        System.out.println(floatAF.verifySequence("125a"));
-//        System.out.println(floatAF.verifySequence("-125a"));
-//
-//        IdAF idAF = new IdAF("lab2/lab2_part2/src/main/resources/idAF_input.txt");
-//        System.out.println(idAF.getStareInitiala());
-//        System.out.println(idAF.getAlfabet());
-//        System.out.println(idAF.getStari());
-//        System.out.println(idAF.getTranzitii());
-//        System.out.println(idAF.getStariFinale());
-//        System.out.println(idAF.verifySequence("1.25"));
-//        System.out.println(idAF.verifySequence("-125"));
-//        System.out.println(idAF.verifySequence("perimetru"));
-//        System.out.println(idAF.verifySequence("arie"));
-//        System.out.println(idAF.verifySequence("a2"));
-//        System.out.println(idAF.verifySequence("arie2"));
-//        System.out.println(idAF.verifySequence("ar2ad"));
 }
