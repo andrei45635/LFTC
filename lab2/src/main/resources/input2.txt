@@ -1,0 +1,26 @@
+q0 q1 q2 q3
+q0
+5
+q0 q1 - 0
+q1 q2 digit 0
+q2 q2 digit 1
+q0 q3 digit 0
+q3 q3 digit 1
+q0 q2 digit 1
+
+
+Vlad:
+AF: -> AF-ul are o lista de stari, un set de final states,
+            un dictionar de tranzitii unde starea este cheie si
+               valoarea este un dictionar unde alfabetul este cheia si starile in care poate sa mearga starea cheie ca si valoare,
+                alfabetul si starea initiala sunt string-uri si un boolean is_deterministic pentru a verifica determinismul
+        init_state: String
+        alphabet: String
+        states: List<String>
+        final_states: Set<String>
+        transitions: Map<String, Map<String, String>>
+        is_deterministic: boolean
+
+Stare: -> 'q' urmat de un integer
+Tranzitie: -> dictionar unde starea curenta este cheia si valoarea este un dictionar,
+                    unde cheia este alfabetul acceptat de AF si valoarile sunt starile unde poate sa ajung starea curenta
