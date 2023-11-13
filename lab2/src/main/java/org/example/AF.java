@@ -73,7 +73,12 @@ public class AF {
                         break;
                     }
 
-                    if (t.getStareInitiala().equals(stareInitiala) && t.getValoare().equals("-") && cs.equals("-")) {
+//                    if (t.getStareInitiala().equals(stareInitiala) && t.getValoare().equals("-") && cs.equals("-")) {
+//                        nextChar = t.getStareFinala();
+//                        break;
+//                    }
+
+                    if (t.getStareInitiala().equals(stareInitiala) && t.getValoare().equals(".") && cs.equals(".")) {
                         nextChar = t.getStareFinala();
                         break;
                     }

@@ -1,0 +1,82 @@
+KEYWORDS:
+[using, std, <iostream>, cout, double, #include, namespace, cin, main, int]
+OPERATORS:
+[>>, <<, *, =, >]
+SEPARATORS:
+[(, ), ;, {, }]
+CONSTANTS:
+[2, 3, 3.14, 2.79]
+STRING CONSTANTS:
+[ r,  perimetru,  arie]
+TABELA SIMBOLURI PT ID:
+11	|	0	|	r
+35	|	0	|	perimetru
+70	|	0	|	cerc
+75	|	0	|	pi
+84	|	0	|	arie
+
+TABELA SIMBOLURI PT CONST:
+2	|	0	|	2
+3	|	0	|	3
+7	|	0	|	2.79
+31	|	0	|	3.14
+
+FORMA INTERNA A PROGRAMULUI:
+-1	|	-	|	#include
+-1	|	-	|	<iostream>
+-1	|	-	|	using
+-1	|	-	|	namespace
+-1	|	-	|	std
+-1	|	-	|	;
+-1	|	-	|	int
+-1	|	-	|	main
+-1	|	-	|	(
+-1	|	-	|	)
+-1	|	-	|	{
+-1	|	-	|	int
+7	|	175	|	perimetru
+-1	|	-	|	;
+-1	|	-	|	int
+6	|	175	|	r
+-1	|	-	|	;
+-1	|	-	|	cin
+-1	|	-	|	>>
+36	|	175	|	r
+-1	|	-	|	;
+-1	|	-	|	double
+15	|	175	|	arie
+-1	|	-	|	;
+21	|	175	|	perimetru
+-1	|	-	|	=
+2	|	195	|	2
+-1	|	-	|	*
+3	|	195	|	3
+-1	|	-	|	*
+14	|	175	|	r
+-1	|	-	|	;
+33	|	175	|	cerc
+-1	|	-	|	=
+1	|	195	|	3.14
+-1	|	-	|	*
+54	|	175	|	r
+-1	|	-	|	*
+19	|	195	|	2.79
+-1	|	-	|	;
+33	|	175	|	arie
+-1	|	-	|	=
+49	|	175	|	pi
+-1	|	-	|	*
+35	|	175	|	r
+-1	|	-	|	*
+28	|	175	|	r
+-1	|	-	|	;
+-1	|	-	|	cout
+-1	|	-	|	<<
+67	|	175	|	perimetru
+-1	|	-	|	;
+-1	|	-	|	cout
+-1	|	-	|	<<
+84	|	175	|	arie
+-1	|	-	|	;
+-1	|	-	|	}
+
