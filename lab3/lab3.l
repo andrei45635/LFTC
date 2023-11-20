@@ -90,7 +90,6 @@ void addToTS(char* atom, char* type){
 	} else {
 		printf("Unknown type\n");
 	}
-	
 }
 
 %}
