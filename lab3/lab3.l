@@ -3,7 +3,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-int MAX_CAP = 999;
+#define CHAR_LIMIT 250
+#define MAX_CAP 999
+
 int currentLine = 0;
 int codAtom = 0;
 
@@ -47,9 +49,8 @@ void printTS(char* type){
 	}
 }
 
-int hash(int letter, int i){
-	int hashed = letter % MAX_CAP + i * (1 + letter % MAX_CAP);
-	return hashed % MAX_CAP;
+int hash(int c, int i){
+	return c % MAX_CAP + i * (1 + c % MAX_CAP) % MAX_CAP;
 }
 
 int atoi(const char* atom){
@@ -73,8 +74,10 @@ void addToTS(char* atom, char* type){
 		int codAtomTS = atoi(atom);
 		int currentChar = 0;
 		int hashVal = hash(codAtomTS, currentChar);
-		while(strlen(idTS[hashVal]) && strcmp(idTS[hashVal], atom)){
-			currentChar++;
+		for (int currentChar = 0; currentChar < strlen(atom) + 1; currentChar++) {
+			if(0 < strlen(idTS[hashVal]) && 0 != strcmp(idTS[hashVal], atom)) {
+				hashVal = hash(hashVal, currentChar);
+			}
 		}
 		strcpy(idTS[hashVal], atom);
 		addToFIP(atom, codAtomTS, hash(hashVal, currentChar));
@@ -82,8 +85,10 @@ void addToTS(char* atom, char* type){
 		int codAtomTS = atoi(atom);
 		int currentChar = 0;
 		int hashVal = hash(codAtomTS, currentChar);
-		while(strlen(constTS[hashVal]) && strcmp(constTS[hashVal], atom)){
-			currentChar++;
+		for (int currentChar = 0; currentChar < strlen(atom) + 1; currentChar++) {
+			if(0 < strlen(constTS[hashVal]) && 0 != strcmp(constTS[hashVal], atom)) {
+				hashVal = hash(hashVal, currentChar);
+			}
 		}
 		strcpy(constTS[hashVal], atom);
 		addToFIP(atom, codAtomTS, hash(hashVal, currentChar));
@@ -106,7 +111,7 @@ SEPARATOR 	","|"."|":"|";"|"{"|"}"|"("|")"
 %%
 
 {KEYWORD} {
-	int codAtom = -1;
+	codAtom = -1;
 	if (strcmp("#include", yytext) == 0) codAtom = 2;
 	if (strcmp("<iostream>", yytext) == 0) codAtom = 3;
 	if (strcmp("using", yytext) == 0) codAtom = 4;
@@ -124,8 +129,8 @@ SEPARATOR 	","|"."|":"|";"|"{"|"}"|"("|")"
 }
 
 {ID} {
-	if(yyleng > 250){
-		printf("Error on line %d: String %s exceeds limit\n", currentLine, yytext);
+	if(yyleng > CHAR_LIMIT){
+		printf("Error on line %d: String %s exceeds %d limit\n", currentLine, yytext, CHAR_LIMIT);
 		break;
 	}
 	addToTS(yytext, "ID");
@@ -136,7 +141,7 @@ SEPARATOR 	","|"."|":"|";"|"{"|"}"|"("|")"
 }
 
 {OPERATOR} {
-	int codAtom = -1;
+	codAtom = -1;
 	if (strcmp("+", yytext) == 0) codAtom = 15;
 	if (strcmp("-", yytext) == 0) codAtom = 16;
 	if (strcmp("*", yytext) == 0) codAtom = 17;
@@ -160,7 +165,7 @@ SEPARATOR 	","|"."|":"|";"|"{"|"}"|"("|")"
 	addToFIP(yytext, codAtom, -1);
 }
 
-[\n] {
+[\r\n] {
 	currentLine++;
 }
 
