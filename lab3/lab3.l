@@ -153,7 +153,7 @@ SEPARATOR 	","|"."|":"|";"|"{"|"}"|"("|")"
 }
 
 {SEPARATOR} {
-	int codAtom = -1;
+	codAtom = -1;
 	if (strcmp(",", yytext) == 0) codAtom = 22;
 	if (strcmp(".", yytext) == 0) codAtom = 23;
 	if (strcmp(":", yytext) == 0) codAtom = 24;
