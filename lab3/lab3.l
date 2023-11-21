@@ -102,7 +102,7 @@ void addToTS(char* atom, char* type){
 %option noyywrap
 
 DIGIT 		[0-9]
-ID          [a-zA-Z][a-zA-Z0-9]*   
+ID          	[a-zA-Z][a-zA-Z0-9]*   
 CONST   	0|[1-9][0-9]*
 KEYWORD 	#include|<iostream>|using|namespace|std|int|main|cin|cout|double|if|while
 OPERATOR	"+"|"-"|"*"|"="|">"|"<"|"!="
