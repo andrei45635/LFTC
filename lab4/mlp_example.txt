@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int perimetru;
+	int r;
+	cin >> r;
+	double arie;
+	perimetru = 2 * 3.14 * r;
+	arie = pi * r * r;
+	if(arie != perimetru){
+		arie = 2.14;
+	}
+	while(arie != 0){
+		arie = arie - 1;
+	}
+	cout << perimetru;
+	cout << arie;
+}
