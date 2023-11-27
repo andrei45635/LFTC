@@ -1,28 +1,29 @@
 %{
 	#include "lab4.tab.h"
+	
 	int line = 1;
 %}
 
 %option noyywrap
 
-ID    [a-zA-Z][1-9]*
+ID 	  [a-zA-Z][1-9]*
 CHAR  [a-zA-Z]*
 DIGIT [0-9]*
 NZD   [1-9]*
 CONST [-]?[0-9]+("."[0-9]+)?
 
 %%	
-"#include"   				{ return INCLUDE; }
+"#include"   			{ return INCLUDE; }
 "cin" 		 			{ return CIN; }
 "cout" 		 			{ return COUT; }
 "main()" 	 			{ return MAIN; }
-"namespace"  				{ return NAMESPACE; }
+"namespace"  			{ return NAMESPACE; }
 "std" 		 			{ return STD; }
 "int" 		 			{ return INT; }
 "void" 		 			{ return VOID; }
 "double" 	 			{ return DOUBLE; }
-"<iostream>" 				{ return IOSTREAM; }
-"<fstream>"  				{ return IOSTREAM; }
+"<iostream>" 			{ return IOSTREAM; }
+"<fstream>"  			{ return IOSTREAM; }
 "using" 	 			{ return USING; }
 "if" 		 			{ return IF; }
 "else" 	 	 			{ return ELSE; }
@@ -30,7 +31,7 @@ CONST [-]?[0-9]+("."[0-9]+)?
 "struct" 	 			{ return STRUCT; }
 	
 {DIGIT} 	 			{ return DIGIT; }
-{ID}{1,250}  				{ return ID; }
+{ID}{1,250}  			{ return ID; }
 {CONST}  				{ return CONST; }
 {CHAR} 					{ return CHAR; }
 	
