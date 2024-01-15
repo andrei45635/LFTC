@@ -1,0 +1,34 @@
+9 #
+24 include
+17 <
+19 iostream
+18 >
+21 using
+13 namespace
+23 std
+14 ;
+20 void
+15 main
+11 (
+10 )
+26 {
+7 int
+1 ID 97
+14 ;
+25 cin
+6 >>
+1 ID 97
+14 ;
+1 ID 97
+16 =
+1 ID 97
+12 +
+0 CONST 49
+14 ;
+5 cout
+8 <<
+1 ID 97
+8 <<
+22 endl
+14 ;
+27 }

@@ -1,0 +1,23 @@
+PROGRAM-> \t \x18 \x11 \x13 \x12 \x15 \r \x17 \x0e \x14 \x0f \x0b \n \x1a INSTRS \x1b
+INSTRS-> epsilon | INSTR | INSTR INSTR
+INSTR-> INSTR_DECL | INSTR_ASSIGN | INSTR_READ | INSTR_WRITE | INSTR_COND | INSTR_LOOP
+INSTR_DECL-> DTYPE ID ;
+ID-> LETTER | LETTER CHARS
+LETTER-> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
+CHARS-> CHAR | CHAR CHARS
+CHAR-> LETTER | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+DTYPE-> int | CHAR | circle
+INSTR_ASSIGN-> ID = EXPR ;
+EXPR-> ID | CONST | ID OPERATOR EXPR | CONST OPERATOR EXPR
+CONST-> INTEGER | DECIMAL
+INTEGER-> 0 | NON_ZERO_DIGIT DIGIT_LIST
+NON_ZERO_DIGIT-> 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9-
+DIGIT_LIST-> EPSILON | DIGIT | DIGIT DIGIT_LIST
+DIGIT-> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+DECIMAL-> INTEGER . DIGIT_LIST | . NON_EMPTY_DIGIT_LIST
+NON_EMPTY_DIGIT_LIST-> DIGIT | DIGIT DIGIT_LIST
+OPERATOR-> * | - | + | = | >
+INSTR_READ-> cin ID ;
+INSTR_WRITE-> cout << EXPR << endl ;
+INSTR_COND-> if ( EXPR ) { INSTR } else { INSTRS }
+INSTR_LOOP-> while ( EXPR ) { INSTRS }

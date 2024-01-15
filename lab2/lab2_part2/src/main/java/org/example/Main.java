@@ -113,7 +113,7 @@ public class Main {
             } else if(atoms.get(e) != null){
                 FIP f = new FIP(atom, -1, -1);
                 fip.add(f);
-            } else if(e.equals(" ")){
+            } else if(e.equals("")){
                 continue;
             } else {
                 System.out.println("Error on line " + line + " for atom " + e + "!");
