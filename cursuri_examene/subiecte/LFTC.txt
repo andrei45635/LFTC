@@ -1,0 +1,18 @@
+Laborator 3 (2 sapt)
+
+
+Gramatici independente de context
+
+Sarcini:
+1. Data fiind o gramatica, verificati daca e sau nu independenta de context
+2. Implementati algoritmi pentru:
+	1 - eliminarea simbolurilor neproductive
+	2 - eliminarea simbolurilor inaccesibile
+	3 - eliminarea epsilon productiilor
+	4 - eliminarea redenumirilor
+	5 - eliminarea recursivitatii de stanga
+	
+        Din cei 5 algoritmi mentionati mai sus, fiecare student va implementa doar 2, conform atribuirilor facute de cadrul didactic indrumator la laborator.
+
+
+ 
